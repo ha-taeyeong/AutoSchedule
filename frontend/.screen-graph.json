@@ -1,0 +1,53 @@
+{
+  "nodes": [
+    {
+      "id": "src/screens/MainPage/MainPage.jsx",
+      "label": "MainPage",
+      "routes": [
+        "/"
+      ],
+      "isRoot": true
+    },
+    {
+      "id": "src/screens/MemoPage/Memo.jsx",
+      "label": "Memo",
+      "routes": [
+        "/memo"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "src/components/FixedNavBar.jsx:27:8-to-src/screens/MainPage/MainPage.jsx",
+      "source": "src/screens/MainPage/MainPage.jsx",
+      "target": "src/screens/MainPage/MainPage.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<a href=\"/\" className=\"flex items-center space-x-2\">\n          {/* 로고 이미지를 AutoSchedule 컨셉에 맞게 변경해야 합니다. */}\n          {/* 현재 이미지를 대체하여 임시로 텍스트와 아이콘을 사용합니다. */}\n          <span className=\"font-pretendard text-3xl font-black text-blue-600\">\n            {projectName}\n          </span>\n          <span className=\"text-sm font-semibold text-gray-500 hidden sm:inline\">\n            | 하태영 포트폴리오\n          </span>\n        </a>",
+          "line": 27,
+          "endLine": 36,
+          "column": 8,
+          "endColumn": 12,
+          "sourceFile": "src/components/FixedNavBar.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/FixedNavBar.jsx:27:8-to-src/screens/MainPage/MainPage.jsx",
+      "source": "src/screens/MainPage/MainPage.jsx",
+      "target": "src/screens/MainPage/MainPage.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<a href=\"/\" className=\"flex items-center space-x-2\">\n          {/* 로고 이미지를 AutoSchedule 컨셉에 맞게 변경해야 합니다. */}\n          {/* 현재 이미지를 대체하여 임시로 텍스트와 아이콘을 사용합니다. */}\n          <span className=\"font-pretendard text-3xl font-black text-blue-600\">\n            {projectName}\n          </span>\n          <span className=\"text-sm font-semibold text-gray-500 hidden sm:inline\">\n            | 하태영 포트폴리오\n          </span>\n        </a>",
+          "line": 27,
+          "endLine": 36,
+          "column": 8,
+          "endColumn": 12,
+          "sourceFile": "src/components/FixedNavBar.jsx"
+        }
+      }
+    }
+  ]
+}

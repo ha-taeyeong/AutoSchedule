@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+.venv/
+.env/
+*.sqlite3
+*.db
+.mypy_cache/
+.pytest_cache/
+pip-log.txt
+
+# Node.js(React)
+node_modules/
+npm-debug.log*
+build/
+dist/
+.env
+
+# VSCode & IDE
+.vscode/
+*.code-workspace
+.idea/
+
+# docs
+~$*.pptx
+
+# key
+.env
+
+backend_latest.tar.gz
+발표자료.mov
+# 기타 큰 파일
+*.tar.gz
+*.mov

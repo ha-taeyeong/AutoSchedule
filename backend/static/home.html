@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>Memo</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #fafafb;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Pretendard', 'Inter', Arial, sans-serif;
+        }
+        .container {
+            background: #fff;
+            border-radius: 32px;
+            box-shadow: 0 4px 32px 0 #cacaca16, 0 2px 12px #eaeaea;
+            padding: 54px 44px 44px 44px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 540px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+        p {
+            font-size: 1.15rem;
+            color: #444c54;
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 48px;
+            white-space: pre-line;
+        }
+        .btn-main {
+            width: 90%;
+            padding: 17px 0 15px 0;
+            background: #18181b;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px 0 #6262621a;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+            transition: background 0.18s;
+        }
+        .btn-main:last-child { margin-bottom: 0; }
+        .btn-main:hover { background: #242429; }
+        @media (max-width: 600px) {
+            .container { padding: 20px 8px 34px 8px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="static/autoSchedule_logo.png" alt="Plan Up 로고" style="display:block; margin:32px auto 16px auto; height:96px;">
+        <p>
+메모만 하면 자동으로 일정 정보를 추출해 <br>캘린더에 등록해주는 플랫폼입니다.<br>반복적인 일정 등록을 줄이고, 실수 없이 효율적인 일정 관리를 돕습니다.
+        </p>
+        <button class="btn-main" onclick="window.location.href='/login'">구글 로그인 시작</button>
+        <button class="btn-main" onclick="window.location.href='/schedule'">일정 입력 및 등록 화면</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+[2025-10-19 18:57:46 +0900] [13737] [INFO] Starting gunicorn 23.0.0
+[2025-10-19 18:57:46 +0900] [13737] [INFO] Listening at: http://0.0.0.0:8000 (13737)
+[2025-10-19 18:57:46 +0900] [13737] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2025-10-19 18:57:46 +0900] [13741] [INFO] Booting worker with pid: 13741
+[2025-10-19 18:57:46 +0900] [13742] [INFO] Booting worker with pid: 13742
+[2025-10-19 18:57:46 +0900] [13743] [INFO] Booting worker with pid: 13743
+[2025-10-19 18:57:46 +0900] [13744] [INFO] Booting worker with pid: 13744
+[2025-10-19 18:57:50 +0900] [13742] [INFO] Started server process [13742]
+[2025-10-19 18:57:50 +0900] [13743] [INFO] Started server process [13743]
+[2025-10-19 18:57:50 +0900] [13744] [INFO] Started server process [13744]
+[2025-10-19 18:57:50 +0900] [13741] [INFO] Started server process [13741]
+[2025-10-19 18:57:50 +0900] [13742] [INFO] Waiting for application startup.
+[2025-10-19 18:57:50 +0900] [13743] [INFO] Waiting for application startup.
+[2025-10-19 18:57:50 +0900] [13744] [INFO] Waiting for application startup.
+[2025-10-19 18:57:50 +0900] [13741] [INFO] Waiting for application startup.
+[2025-10-19 18:57:57 +0900] [13744] [INFO] Application startup complete.
+[2025-10-19 18:57:57 +0900] [13741] [INFO] Application startup complete.
+[2025-10-19 18:57:57 +0900] [13743] [INFO] Application startup complete.
+[2025-10-19 18:57:57 +0900] [13742] [INFO] Application startup complete.
+[2025-10-19 19:07:33 +0900] [13737] [INFO] Handling signal: hup
+[2025-10-19 19:07:33 +0900] [13737] [INFO] Hang up: Master
+[2025-10-19 19:07:33 +0900] [13861] [INFO] Booting worker with pid: 13861
+[2025-10-19 19:07:33 +0900] [13862] [INFO] Booting worker with pid: 13862
+[2025-10-19 19:07:33 +0900] [13864] [INFO] Booting worker with pid: 13864
+[2025-10-19 19:07:33 +0900] [13865] [INFO] Booting worker with pid: 13865
+[2025-10-19 19:07:33 +0900] [13737] [ERROR] Worker (pid:13742) was sent SIGHUP!
+[2025-10-19 19:07:33 +0900] [13737] [ERROR] Worker (pid:13743) was sent SIGHUP!
+[2025-10-19 19:07:33 +0900] [13737] [ERROR] Worker (pid:13741) was sent SIGHUP!
+[2025-10-19 19:07:33 +0900] [13737] [ERROR] Worker (pid:13744) was sent SIGHUP!
+[2025-10-19 19:07:36 +0900] [13864] [INFO] Started server process [13864]
+[2025-10-19 19:07:36 +0900] [13861] [INFO] Started server process [13861]
+[2025-10-19 19:07:36 +0900] [13865] [INFO] Started server process [13865]
+[2025-10-19 19:07:36 +0900] [13862] [INFO] Started server process [13862]
+[2025-10-19 19:07:36 +0900] [13864] [INFO] Waiting for application startup.
+[2025-10-19 19:07:36 +0900] [13861] [INFO] Waiting for application startup.
+[2025-10-19 19:07:36 +0900] [13865] [INFO] Waiting for application startup.
+[2025-10-19 19:07:36 +0900] [13862] [INFO] Waiting for application startup.
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Fatal Python error: Fatal Python error: init_sys_streamsinit_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+: can't initialize sys standard streams
+Python runtime state: core initialized
+Python runtime state: core initialized
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSErrorOSError: [Errno 9] Bad file descriptorOSError: [Errno 9] Bad file descriptor
+
+
+Current thread 0x00007ff856e11340:  (most recent call first):
+  <no Python frame>
+[Errno 9] Bad file descriptor
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007ff856e11340 (most recent call first):
+  <no Python frame>
+
+
+Current thread 0x00007ff856e11340 (most recent call first):
+  <no Python frame>
+Current thread 0x00007ff856e11340 (most recent call first):
+  <no Python frame>
+[2025-10-19 19:07:43 +0900] [13862] [INFO] Application startup complete.
+[2025-10-19 19:07:43 +0900] [13865] [INFO] Application startup complete.
+[2025-10-19 19:07:44 +0900] [13864] [INFO] Application startup complete.
+[2025-10-19 19:07:44 +0900] [13861] [INFO] Application startup complete.
+INFO:     Started server process [4435]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+/opt/anaconda3/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+INFO:     Started server process [30163]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8001): [errno 48] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+NLP 모델 다운로드 및 로딩 시작...
+NLP 모델 로딩 완료.
