@@ -34,7 +34,7 @@ from parser import extract_locations, location_keywords_extended
 load_dotenv()
 CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-CLIENT_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI", "http://13.210.90.100.nip.io:8001/auth/callback")
+CLIENT_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI", "https://13.210.90.100.nip.io/auth/callback")
 
 # 사용자 토큰 저장소(실제 서비스시 DB 활용)
 user_tokens = {}
@@ -48,15 +48,8 @@ app = FastAPI()
 # 서버 시작 이벤트에 모델 로딩 로직 추가
 @app.on_event("startup")
 def load_nlp_pipeline():
-    global _nlp_pipeline
-    print("NLP 모델 다운로드 및 로딩 시작...")
-    try:
-        stanza.download("ko", verbose=False)
-        _nlp_pipeline = stanza.Pipeline(lang="ko", processors="tokenize,pos,lemma")
-        print("NLP 모델 로딩 완료.")
-    except Exception as e:
-        print(f"FATAL: Stanza 로딩 실패: {e}")
-        # 실패 시 서버가 멈추거나 불안정해질 수 있습니다.
+    # 이 부분을 임시로 주석 처리하거나, stanza 관련 코드를 제거하고 서버 시작을 시도해 보세요.
+    pass # 일단 아무것도 하지 않고 함수를 통과시키기
 
 # NLP 파이프라인 객체 접근 함수 정의
 def get_nlp_pipeline():
@@ -165,13 +158,17 @@ def login():
 
 @app.get("/auth/callback")
 def auth_callback(code: str):
+    # 🚨 CLIENT_REDIRECT_URI에서 포트 번호와 HTTP 프로토콜을 강제 제거
+    # Nginx 리버스 프록시 환경에서 포트를 제거하기 위해 추가합니다.
+    correct_uri = CLIENT_REDIRECT_URI.replace(":8001", "").replace("http:", "https:")
+    
     # 받은 code로 access token 요청(구글 인증 완료 처리)
     token_url = "https://oauth2.googleapis.com/token"
     data = {
         "code": code,
         "client_id": CLIENT_ID,
         "client_secret": CLIENT_SECRET,
-        "redirect_uri": CLIENT_REDIRECT_URI,
+        "redirect_uri": correct_uri, # <--- 수정된 URI 사용
         "grant_type": "authorization_code"
     }
     response = requests.post(token_url, data=data)
@@ -239,11 +236,14 @@ def parse_multi_schedule(req: TextRequest):
         # 이벤트 추출 (event_part → 명사 순서)
         event = event_part if event_part else None
         if not event:
-            # doc = nlp(part)
-            doc = get_nlp_pipeline()(part)
-            nouns = [word.text for sent in doc.sentences for word in sent.words if word.upos == "NOUN"]
+            # # doc = nlp(part)
+            # doc = get_nlp_pipeline()(part) # 👈 이 부분을 주석 처리
+            # nouns = [word.text for sent in doc.sentences for word in sent.words if word.upos == "NOUN"]
+            
             event = next((kw for kw in event_keywords if kw in part), None)
-            event = event or (nouns[-1] if nouns else "일정")
+            # event = event or (nouns[-1] if nouns else "일정") # 👈 이 부분도 주석 처리
+            event = event or "일정" # 👈 NLP 없이 기본값 '일정' 사용
+            
         schedules.append({"time": time, "location": location, "event": event})
     return {"schedules": schedules}
 
